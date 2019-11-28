@@ -151,12 +151,12 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              npm run publish:chrome > publish.log 2>&1 && cat publish.log ||
-              (cat publish.log && cat publish.log | grep PKG_INVALID_VERSION_NUMBER && echo "Same version, skipping the deploy to chrome")
-  
               npm run publish:firefox > publish.log 2>&1 && cat publish.log ||
               (cat publish.log && cat publish.log | grep "Version already exists" && echo "Same version, skipping the deploy to firefox") ||
               (cat publish.log && cat publish.log | grep "Your add-on has been submitted for review" && echo "Deploy to firefox successfull")
+  
+              npm run publish:chrome > publish.log 2>&1 && cat publish.log ||
+              (cat publish.log && cat publish.log | grep PKG_INVALID_VERSION_NUMBER && echo "Same version, skipping the deploy to chrome")
             fi
   
 

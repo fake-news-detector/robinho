@@ -21,7 +21,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
-    "chrome-webstore-upload-cli": "^1.1.1",
+    "chrome-webstore-upload-cli": "^1.2.0",
     "concurrently": "^3.5.1",
     "copy-webpack-plugin": "^4.1.1",
     "elm": "^0.19.1-3",
